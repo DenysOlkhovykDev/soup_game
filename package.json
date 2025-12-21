@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "dev": "serve . -l 3000"
+    },
+    "dependencies": {
+        "-": "^0.0.1",
+        "@playwright/test": "^1.57.0"
+    }
+}
