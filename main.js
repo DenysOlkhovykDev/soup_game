@@ -1,3 +1,9 @@
+import ScoreSystem from './src/logic/ScoreSystem.js';
+import EventBus from "./src/core/EventBus.js";
+import { EVENTS } from './src/core/events.js';
+
+new ScoreSystem();
+
 const config = {
     type: Phaser.CANVAS,
     width: 1920,
@@ -35,6 +41,12 @@ function create() {
             color: "#ffffff",
         })
         .setOrigin(0.5);
+
+    this.add.ellipse(960,540,800,800,0xf0cd3d);
+
+    this.input.on('pointerdown', () => {
+      EventBus.emit(EVENTS.POINTER);
+    });
 }
 
 function update() {}
